@@ -1,0 +1,14 @@
+load(":patches.bzl", "aar_fix_manifest")
+
+aar_import(
+    name = "com_jakewharton_butterknife",
+    aar = aar_fix_manifest(
+        name = "_com_jakewharton_butterknife",
+        aar = "@maven//:v1/https/repo1.maven.org/maven2/com/jakewharton/butterknife/10.2.3/butterknife-10.2.3.aar",
+    ),
+    tags = ["maven_coordinates=com.jakewharton:butterknife:10.2.3"],
+    visibility = [
+        "//visibility:public",
+    ],
+    deps = ["@maven//:com_jakewharton_butterknife_runtime"],
+)

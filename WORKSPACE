@@ -15,6 +15,9 @@ maven_install(
         "com.jakewharton:butterknife:10.2.3",
     ],
     maven_install_json = "//:maven_install.json",
+    override_targets = {
+        "com.jakewharton:butterknife": "@//patches:com_jakewharton_butterknife",
+    },
     repositories = [
         "https://maven.google.com",
         "https://repo1.maven.org/maven2",
